@@ -1,0 +1,47 @@
+@startuml
+' DEFINITION DES ENTITES :
+' ------------------------
+entity "**serie**" as serie #lightblue {
+    **<<PK>>  id** : INT
+    **lien_image** : VARCHAR(255)
+    **nom** : VARCHAR(255)
+    **premise** : VARCHAR(255)
+    **vo** : VARCHAR(255)
+}
+
+entity "**genre**" as genre #darksalmon {
+    **<<PK>> id** : INT
+    **nom** : VARCHAR(255)
+}
+
+entity "**genre_series**" as genre_series #lightpink  {
+    **<<PK>><<FK>> genre_id** : INT
+    **<<PK>><<FK>> series_id** : INT
+}
+
+entity "**saison**" as saison #goldenrod {
+    **<<PK>> id** : INT
+    **annee** : INT
+    **nombre_episode** : INT
+    **num** : INT
+    **nom** : VARCHAR(255)
+    --
+    **<<FK>> serie_id** : INT
+}
+
+entity "**episode**" as nombre_episode #blue {
+
+
+
+' DEFINITION DES RELATIONS :
+' --------------------------
+serie ||--o{ saison : "series_id:id"
+serie ||--o{ genre_series : "series_id:id"
+genre ||--o{ genre_series : "genre_id:id"
+
+
+' COMMENTAIRES :
+' --------------
+note left of serie : **__premise :__** //Description de la série// \n **__vo :__** //Langue originale//
+
+@enduml

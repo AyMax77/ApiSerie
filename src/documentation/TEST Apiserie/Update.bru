@@ -1,0 +1,36 @@
+meta {
+  name: Update
+  type: http
+  seq: 10
+}
+
+put {
+  url: http://localhost:8080/series/7
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "id": 7,
+  "nom": "Drive to survive",
+  "lienImage": "drive_to_survive.jpg",
+  "vo": "americain",
+  "premise": "Charles Leclerc rêve de gagner un titre mondial de Formule 1, mais des concurrents tenacent lui barre la route. Découvrer son incroyable épopée jusqu'au sacre de ce champion",
+  "genres": [
+  {
+  "id": 7,
+  "nom": "Biography"
+  }
+  ],
+  "saisons": [
+  {
+  "id": 11,
+  "num": 1,
+  "nom": "Saison 1",
+  "annee": 2021,
+  "nombreEpisode": 10
+  }
+  ]
+  }
+}

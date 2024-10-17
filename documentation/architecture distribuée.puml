@@ -1,0 +1,17 @@
+@startuml
+skinparam actorStyle awesome
+!include <office/Servers/application_server>
+!include <office/Servers/database_server>
+!include <office/Concepts/website>
+
+
+participant "<$website>\nClient\nWeb" as Client #lightblue
+participant "<$application_server>\n serveur\nAPI" as srvAPI #lightblue
+participant "<$database_server>\n serveur\nBD" as srvBD #lightblue
+
+Client --> srvAPI : Requêtes HTTP
+srvAPI --> srvBD : Requêtes SQL
+srvBD --> srvAPI : Réponses SQL
+srvAPI --> Client : Réponses HTTP
+
+@enduml

@@ -1,0 +1,49 @@
+meta {
+  name: POST Series
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8080/series
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "nom": "Foundation",
+  "lienImage": "",
+  "vo": "anglais",
+  "premise": "L'empire galactique, dirigé par la dynastie génétique des clones de l'Empereur Cléon Ier, se voit prédire par la psychohistoire de Hari Seldon un effondrement suivi
+  de 30 000 ans de ténèbres avant qu'un second empire galactique ne prenne la relève. ",
+  "genres": [
+  {
+  "id":1,
+  "nom": "Drame"
+  },
+  {
+  "id":4,
+  "nom": "Science-Fiction"
+  }
+  ],
+  "saisons": [
+  {
+  "num": 1,
+  "nom": "Saison 1",
+  "annee": 2021,
+  "nombreEpisode": 10
+  },
+  {
+  "num": 2,
+  "nom": "Saison 2",
+  "annee": 2023,
+  "nombreEpisode": 10
+  }
+  ]
+  }
+}
+
+body:multipart-form {
+  : 
+}
